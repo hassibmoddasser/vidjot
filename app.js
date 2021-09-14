@@ -34,12 +34,10 @@ app.use(express.urlencoded({
 app.use(methodOverride('_method'));
 
 // Express Session Middleware
-app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'secret',
   resave: true,
-  saveUninitialized: true,
-  // cookie: { secure: true }
+  saveUninitialized: true
 }));
 
 // Connect Flash Middleware
