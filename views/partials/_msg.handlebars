@@ -1,25 +1,13 @@
 {{#if success_msg }}
-<div class="container pt-5">
-  <div class="row">
-    <div class="col-md-8 mx-auto">
-      <div class="alert alert-success d-flex align-items-center" role="alert">
-        <i class="fa fa-info-circle pe-2"></i>
-        <div>{{ success_msg }}</div>
-      </div>
-    </div>
+  <div class="alert alert-success d-flex align-items-center" role="alert">
+    <i class="fa fa-info-circle pe-2"></i>
+    <div>{{ success_msg }}</div>
   </div>
-</div>
 {{/if}}
 
 {{#if error_msg }}
-<div class="container pt-5">
-  <div class="row">
-    <div class="col-md-8 mx-auto">
-      <div class="alert alert-danger d-flex align-items-center" role="alert">
-        <i class="fa fa-exclamation-circle pe-2"></i>
-        <div>{{ error_msg }}</div>
-      </div>
-    </div>
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <i class="fa fa-exclamation-circle pe-2"></i>
+    <div>{{ error_msg }}</div>
   </div>
-</div>
 {{/if}}
