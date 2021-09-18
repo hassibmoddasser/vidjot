@@ -77,7 +77,7 @@ app.use('/idea', ideas);
 app.use('/', users);
 
 
-const port = 5000;
+const port = process.env.port || 5000;
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
