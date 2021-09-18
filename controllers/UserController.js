@@ -1,6 +1,6 @@
 const mongoose =  require('mongoose');
 const bcrypt = require('bcryptjs');
-const passport = require('passport-local');
+const passport = require('passport')
 
 // Load Idea Model
 require('../models/User');
@@ -16,6 +16,15 @@ exports.login = (req, res) => {
 exports.register = (req, res) => {
   res.render('users/register', { layout: 'user' });
 }
+
+// Handle User LOGIN form on POST
+exports.userLoginPost = (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/idea',
+    failureRedirect: '/login',
+    failureFlash: true
+  })(req, res, next);
+};
 
 // Handle User CREATE form on POST
 exports.userCreatePost = (req, res) => {
