@@ -95,3 +95,11 @@ exports.userCreatePost = (req, res) => {
       })
   }
 };
+
+// Handle User LOGOUT on GET
+exports.logout = (req, res) => {
+  req.logout();
+
+  req.flash('success_msg', 'You are logged out!');
+  res.redirect('/login');
+};
