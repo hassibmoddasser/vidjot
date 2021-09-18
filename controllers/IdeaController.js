@@ -7,7 +7,7 @@ const Idea = mongoose.model('ideas');
 
 // Display Ideas
 exports.ideaList = (req, res) => {
-  Idea.find({}).sort({ sort: 'desc' }).lean()
+  Idea.find({ user: req.user.id }).sort({ sort: 'desc' }).lean()
     .then(ideas => {
       res.render('ideas/index', {
         ideas
@@ -23,6 +23,7 @@ exports.ideaCreateGet = (req, res) => {
 // Handle Idea CREATE form on POST
 exports.ideaCreatePost = (req, res) => {
   let { title, details } = req.body;
+  let user = req.user.id;
 
   let errors = [];
 
@@ -44,7 +45,8 @@ exports.ideaCreatePost = (req, res) => {
   } else {
     new Idea({
       title,
-      details
+      details,
+      user
     })
       .save()
       .then(idea => {
@@ -58,7 +60,12 @@ exports.ideaCreatePost = (req, res) => {
 exports.ideaEditGet = (req, res) => {
   Idea.findOne({ _id: req.params.id }).lean()
     .then(idea => {
-      res.render('ideas/edit', { idea });
+      if (idea.user != req.user.id) {
+        req.flash('error_msg', 'Not Authorized');
+        res.redirect('/idea');
+      } else {
+        res.render('ideas/edit', { idea });
+      }
     });
 };
 
