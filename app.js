@@ -1,5 +1,5 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+const expressLayouts = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -9,8 +9,9 @@ const mongoose = require('mongoose');
 // Init express
 const app = express();
 
-// Connect to DB
-mongoose.connect('mongodb://localhost/vidjot')
+// DB Config
+const db = require('./config/keys');
+mongoose.connect(db.mongoURI)
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
@@ -25,9 +26,10 @@ const users = require('./routes/users');
 require('./config/passport')(passport);
 
 
-// Handlebars Middleware
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+// EJS Middleware
+app.use(expressLayouts);
+app.set('layout', './layouts/main')
+app.set('view engine', 'ejs');
 
 // Used to parse JSON bodies
 app.use(express.json());
@@ -78,7 +80,4 @@ app.use('/', users);
 
 
 const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
+app.listen(port, console.log(`Server started on port ${port}`));

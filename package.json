@@ -4,7 +4,8 @@
   "description": "App to create video ideas",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Hassib Moddasser",
   "license": "MIT",
@@ -13,8 +14,9 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.1.1",
     "connect-flash": "^0.1.1",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3",
+    "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.5",
