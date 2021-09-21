@@ -1,6 +1,6 @@
 # VidJot
 
-An app for who want to create video ideas into a safe place!
+An app for those who want to create video ideas into a safe place!
 
 ## Version 1.0.0
 
