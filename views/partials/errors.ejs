@@ -1,0 +1,17 @@
+<%# Output Passport Error %> 
+<% if (error != '') { %>
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <i class="fa fa-exclamation-circle pe-2"></i>
+    <div><%= error %></div>
+  </div>
+<% } %>
+
+<%# Output App Erros %> 
+<% if (typeof errors == 'object' && errors.length > 0) { %>
+  <% errors.forEach(err => { %>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <i class="fa fa-exclamation-circle pe-2"></i>
+      <div><%= err.msg %> </div>
+    </div>
+  <% }); %>
+<% } %>

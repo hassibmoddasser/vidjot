@@ -11,25 +11,13 @@
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/font/css/all.min.css">
 </head>
-<body class="bg-light">
+<body>
 
-  <div class="container pt-2">
-    <div class="row">
-      <div class="col-md-4 mx-auto">
-        {{> _msg }}
-      </div>
-    </div>
-  </div>
+  <%- include('../partials/navbar.ejs') %> 
 
-  <div class="container pt-3">
-    <div class="row">
-      <div class="col-md-4 mx-auto">
-        {{> _errors }}
-      </div>
-    </div>
-  </div>
-
-  {{{ body }}}
+  <main>
+    <%- body %>
+  </main>
 
   <script src="/js/bootstrap.min.js"></script>
 </body>

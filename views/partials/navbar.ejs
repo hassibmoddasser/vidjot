@@ -17,7 +17,7 @@
         </li>
       </ul>
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        {{#if user}}
+        <% if (user) { %>
           <li class="nav-item">
             <a class="nav-link text-light" aria-current="page" href="/idea">
               <i class="far fa-lightbulb"></i>
@@ -30,14 +30,14 @@
               <span class="px-1">Logout</span>
             </a>
           </li>
-        {{else}}
+        <% } else { %>
           <li class="nav-item">
             <a class="nav-link text-light" aria-current="page" href="/login">
               <i class="far fa-user"></i>
               <span class="px-1">Login</span>
             </a>
           </li>
-        {{/if}}
+        <% } %> 
       </ul>
     </div>
   </div>

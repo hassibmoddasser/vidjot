@@ -28,7 +28,7 @@ require('./config/passport')(passport);
 
 // EJS Middleware
 app.use(expressLayouts);
-app.set('layout', './layouts/main')
+app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
 // Used to parse JSON bodies

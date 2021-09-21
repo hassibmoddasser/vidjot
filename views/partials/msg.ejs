@@ -1,13 +1,13 @@
-{{#if success_msg }}
+<% if (success_msg != '') { %>
   <div class="alert alert-success d-flex align-items-center" role="alert">
     <i class="fa fa-info-circle pe-2"></i>
-    <div>{{ success_msg }}</div>
+    <div><%= success_msg %></div>
   </div>
-{{/if}}
+<% } %> 
 
-{{#if error_msg }}
+<% if (error_msg != '') { %> 
   <div class="alert alert-danger d-flex align-items-center" role="alert">
     <i class="fa fa-exclamation-circle pe-2"></i>
-    <div>{{ error_msg }}</div>
+    <div><%= error_msg %></div>
   </div>
-{{/if}}
+<% } %> 

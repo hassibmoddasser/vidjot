@@ -9,12 +9,18 @@ const User = mongoose.model('users');
 
 // Render Login Page
 exports.login = (req, res) => {
-  res.render('users/login', { layout: 'user' });
+  res.render('users/login', {
+    title: 'Login',
+    layout: './layouts/user'
+  });
 };
 
 // Render Register Page
 exports.register = (req, res) => {
-  res.render('users/register', { layout: 'user' });
+  res.render('users/register', {
+    title: 'Register',
+    layout: './layouts/user'
+  });
 }
 
 // Handle User LOGIN form on POST
@@ -55,7 +61,7 @@ exports.userCreatePost = (req, res) => {
   // If errors do exist
   if (errors.length) {
     res.render('users/register', {
-      layout: 'user',
+      layout: './layouts/user',
       errors,
       name,
       email,

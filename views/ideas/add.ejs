@@ -1,6 +1,9 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-md-8 mx-auto">
+
+      <%- include('../partials/errors.ejs') %>
+
       <div class="mb-3">
         <a href="/idea" class="btn btn-outline-dark">Go Back</a>
       </div>
@@ -11,11 +14,11 @@
           <form action="/idea/create" method="POST">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control form-control-lg" id="title" name="title" value="{{ title }}" autofocus>
+              <input type="text" class="form-control form-control-lg" id="title" name="title" value="<%= typeof title != 'undefined' ? title : '' %>" autofocus>
             </div>
             <div class="mb-3">
               <label for="details" class="form-label">Details</label>
-              <textarea class="form-control form-control-lg" rows="4" id="details" name="details">{{ details }}</textarea>
+              <textarea class="form-control form-control-lg" rows="4" id="details" name="details"><%= typeof msg != 'undefined' ? msg : '' %></textarea>
             </div>
             <button type="submit" class="btn btn-primary px-5">Submit</button>
             <button type="reset" class="btn btn-secondary px-3">Reset</button>

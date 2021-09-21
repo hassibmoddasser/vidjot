@@ -1,25 +1,47 @@
 <div class="container pt-5">
   <div class="row">
     <div class="col-lg-4 col-md-6 col-ms-10 mx-auto">
+
+      <%- include('../partials/msg') %>
+
       <form action="/login" method="POST" class="form-signin" autocomplete="off">
         <div class="text-center mb-4">
           <img class="mb-4 w-50" src="/img/hero.png" alt="Logo">
           <h1 class="mb-3 font-weight-normal">Sign in</h1>
         </div>
 
+        <%- include('../partials/errors') %>
+
         <div class="form-floating mb-3">
-          <input type="text" id="email" class="form-control form-control-lg rounded-1" name="email" placeholder="Email Address" required autofocus>
+          <input 
+            type="text" 
+            id="email" 
+            class="form-control form-control-lg rounded-1" 
+            name="email" 
+            placeholder="Email Address" 
+            required 
+            autofocus
+          />
           <label for="email">Email Address</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" id="password" class="form-control form-control-lg rounded-1" name="password" placeholder="Password" required>
+          <input 
+            type="password" 
+            id="password" 
+            class="form-control form-control-lg rounded-1" 
+            name="password" 
+            placeholder="Password" 
+            required
+          />
           <label for="password">Password</label>
         </div>
         <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="remember-me">
-          <label class="form-check-label" for="remember-me">
-            Remember me
-          </label>
+          <input 
+            type="checkbox"
+            id="remember-me"
+            class="form-check-input"
+          />
+          <label class="form-check-label" for="remember-me">Remember me</label>
         </div>
         <div class="d-grid gap-2 mb-2">
           <button class="btn btn-primary btn-lg rounded-1" type="submit">Sign in</button>
