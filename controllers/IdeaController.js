@@ -17,7 +17,11 @@ exports.ideaList = (req, res) => {
 
 // Display Idea CREATE form on GET
 exports.ideaCreateGet = (req, res) => {
-  res.render('ideas/add');
+  let scripts = [
+    { src: '/js/form-validation.js' }
+  ];
+
+  res.render('ideas/add', { scripts });
 };
 
 // Handle Idea CREATE form on POST
@@ -58,13 +62,17 @@ exports.ideaCreatePost = (req, res) => {
 
 // Display Idea EDIT form on GET
 exports.ideaEditGet = (req, res) => {
+  let scripts = [
+    { src: '/js/form-validation.js' }
+  ];
+
   Idea.findOne({ _id: req.params.id }).lean()
     .then(idea => {
       if (idea.user != req.user.id) {
         req.flash('error_msg', 'Not Authorized');
         res.redirect('/idea');
       } else {
-        res.render('ideas/edit', { idea });
+        res.render('ideas/edit', { idea, scripts });
       }
     });
 };
