@@ -1,0 +1,5 @@
+<% if (typeof scripts == 'object' && scripts.length > 0) { %>
+  <% scripts.forEach(script => { %>
+    <script src="<%= script.src %>"></script>
+  <% }); %>
+<% } %>
