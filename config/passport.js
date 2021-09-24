@@ -28,7 +28,7 @@ module.exports = (passport) => {
             if (isMatched) {
               return done(null, user);
             } else {
-              return done(null, false, { message: 'Password Incorrect'});
+              return done(null, false, { message: 'Password Incorrect' });
             }
           });
         })
