@@ -61,6 +61,7 @@ exports.userCreatePost = (req, res) => {
   // If errors do exist
   if (errors.length) {
     res.render('users/register', {
+      title: 'Register',
       layout: './layouts/user',
       errors,
       name,
