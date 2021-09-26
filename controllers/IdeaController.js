@@ -10,6 +10,7 @@ exports.ideaList = (req, res) => {
   Idea.find({ user: req.user.id }).sort({ sort: 'desc' }).lean()
     .then(ideas => {
       res.render('ideas/index', {
+        page: req.originalUrl,
         ideas
       });
   });
@@ -21,7 +22,10 @@ exports.ideaCreateGet = (req, res) => {
     { src: '/js/form-validation.js' }
   ];
 
-  res.render('ideas/add', { scripts });
+  res.render('ideas/add', {
+    page: req.originalUrl,
+    scripts 
+  });
 };
 
 // Handle Idea CREATE form on POST
@@ -42,6 +46,7 @@ exports.ideaCreatePost = (req, res) => {
   // If there are errors
   if (errors.length > 0) {
     res.render('ideas/add', {
+      page: req.originalUrl,
       errors,
       title,
       details
@@ -72,7 +77,11 @@ exports.ideaEditGet = (req, res) => {
         req.flash('error_msg', 'Not Authorized');
         res.redirect('/ideas');
       } else {
-        res.render('ideas/edit', { idea, scripts });
+        res.render('ideas/edit', {
+          page: req.originalUrl,
+          idea,
+          scripts
+        });
       }
     });
 };
