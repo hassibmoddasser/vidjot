@@ -1,0 +1,12 @@
+table th,
+table td {
+  padding: 10px 15px !important;
+}
+
+table th:first-of-type {
+  border-top-left-radius: 4px;
+}
+
+table th:last-of-type {
+  border-top-right-radius: 4px;
+}
