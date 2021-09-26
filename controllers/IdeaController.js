@@ -55,7 +55,7 @@ exports.ideaCreatePost = (req, res) => {
       .save()
       .then(idea => {
         req.flash('success_msg', 'Video Idea added');
-        res.redirect('/idea');
+        res.redirect('/ideas');
       });
   }
 };
@@ -70,7 +70,7 @@ exports.ideaEditGet = (req, res) => {
     .then(idea => {
       if (idea.user != req.user.id) {
         req.flash('error_msg', 'Not Authorized');
-        res.redirect('/idea');
+        res.redirect('/ideas');
       } else {
         res.render('ideas/edit', { idea, scripts });
       }
@@ -87,7 +87,7 @@ exports.ideaUpdatePost = (req, res) => {
       idea.save()
         .then(idea => {
           req.flash('success_msg', 'Video Idea updated');
-          res.redirect('/idea');
+          res.redirect('/ideas');
         });
     });
 };
@@ -97,6 +97,6 @@ exports.ideaDelete = (req, res) => {
   Idea.deleteOne({ _id: req.params.id })
     .then(() => {
       req.flash('success_msg', 'Video Idea removed');
-      res.redirect('/idea');
+      res.redirect('/ideas');
     });
 };

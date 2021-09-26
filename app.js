@@ -75,7 +75,7 @@ app.use('/font', express.static(__dirname + '/node_modules/@fortawesome/fontawes
 
 // Use Routes
 app.use('/', index);
-app.use('/idea', ideas);
+app.use('/ideas', ideas);
 app.use('/', users);
 
 

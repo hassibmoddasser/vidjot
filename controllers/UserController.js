@@ -26,7 +26,7 @@ exports.register = (req, res) => {
 // Handle User LOGIN form on POST
 exports.userLoginPost = (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/idea',
+    successRedirect: '/ideas',
     failureRedirect: '/login',
     failureFlash: true
   })(req, res, next);

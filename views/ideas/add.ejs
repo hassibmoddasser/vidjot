@@ -5,13 +5,13 @@
       <%- include('../partials/errors.ejs') %>
 
       <div class="mb-3">
-        <a href="/idea" class="btn btn-outline-dark">Go Back</a>
+        <a href="/ideas" class="btn btn-outline-dark">Go Back</a>
       </div>
 
       <div class="card border-light">
         <div class="card-header bg-dark"><h1 class="h2 fw-bold text-light p-3 mb-0">Video Idea</h1></div>
         <div class="card-body bg-light p-4">
-          <form action="/idea/create" method="POST" class="needs-validation" autocomplete="off" novalidate>
+          <form action="/ideas/create" method="POST" class="needs-validation" autocomplete="off" novalidate>
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text" class="form-control form-control-lg" id="title" name="title" value="<%= typeof title != 'undefined' ? title : '' %>" required autofocus>

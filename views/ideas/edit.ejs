@@ -5,13 +5,13 @@
       <%- include('../partials/errors.ejs') %> 
 
       <div class="mb-3">
-        <a href="/idea" class="btn btn-outline-dark">Go Back</a>
+        <a href="/ideas" class="btn btn-outline-dark">Go Back</a>
       </div>
 
       <div class="card border-light">
         <div class="card-header bg-dark"><h1 class="h2 fw-bold text-light p-3 mb-0">Edit Idea</h1></div>
         <div class="card-body bg-light p-4">
-          <form action="/idea/update/<%= idea._id %>?_method=PUT" class="needs-validation" method="POST" autocomplete="off" novalidate>
+          <form action="/ideas/update/<%= idea._id %>?_method=PUT" class="needs-validation" method="POST" autocomplete="off" novalidate>
             <input type="hidden" name="_method" value="PUT">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
