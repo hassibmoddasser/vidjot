@@ -19,16 +19,30 @@
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
         <% if (user) { %>
           <li class="nav-item">
-            <a class="nav-link text-light" aria-current="page" href="/idea">
+            <a class="nav-link text-light" aria-current="page" href="/ideas">
               <i class="far fa-lightbulb"></i>
               <span class="px-1">Ideas</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" aria-current="page" href="/logout">
-              <i class="fa fa-sign-out-alt"></i>
-              <span class="px-1">Logout</span>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hey, <%= user.name %>
             </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="fa fa-user"></i>
+                  <span class="px-1">Profile</span>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" href="/logout">
+                  <i class="fa fa-sign-out-alt"></i>
+                  <span class="px-1">Logout</span>
+                </a>
+              </li>
+            </ul>
           </li>
         <% } else { %>
           <li class="nav-item">
