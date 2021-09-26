@@ -10,13 +10,14 @@ const IdeaSchema = new Schema({
     type: String,
     required: true
   },
-  user: {
-    type: String,
-    required: true,
-  },
   date: {
     type: Date,
     default: Date.now
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'users',
+    required: true
   }
 });
 
