@@ -1,6 +1,8 @@
 # VidJot
 
-An app for those who want to create video ideas into a safe place!
+An app for those who want to create video ideas into a safe place.
+
+It is an updated version of [Brad Traversy](https://traversymedia.com)'s project from the "Node.js, Express, & MongoDB" course!
 
 ## Version 1.0.0
 
